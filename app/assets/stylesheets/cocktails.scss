@@ -2,19 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.header-btn {
+  margin-bottom: 30px;
+}
 
 .container {
   height: 100vh;
 }
 
+.index {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-back {
+  margin: 50px;
+}
+
 .card {
   height: 175px;
-  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
+  background-size: contain;
   background-position: center;
   color: black;
   position: relative;
   text-decoration: none;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card:hover {
+  opacity: 0.7;
 }
 
 .index-header {

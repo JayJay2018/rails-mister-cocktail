@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row header-btn">
     <h1 class="index-header">Beer is all u need (<%= Cocktail.count %>)</h1>
     <%= link_to "Add a beer", new_cocktail_path, :class => "btn btn-primary" %>
   </div>
@@ -8,8 +8,8 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-md-4">
 
-      <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill unless cocktail.photo.blank? %>')">
-        <h6> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
+      <div class="card index" style="background-image: url('<%= cl_image_path cocktail.photo unless cocktail.photo.blank? %>')">
+        <h6 class="text-center"> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
       </div>
 
     </div>
@@ -17,4 +17,5 @@
     <% end %>
   </div>
 </div>
+
 
