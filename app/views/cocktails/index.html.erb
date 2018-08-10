@@ -7,10 +7,8 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-md-4">
-
-      <div class="card"
-           style="background-image: url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-        <h6> <%= link_to cocktail.name, cocktail_path(cocktail) %> </h6>
+     <!--  <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo, #height: 300, width: 400, crop: :fill %>')"> -->
+        <h6> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
       </div>
 
     </div>
