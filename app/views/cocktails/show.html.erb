@@ -1,0 +1,30 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="card col-xs-6 col-xs-offset-3">
+      <div class="card-image"></div>
+      <div class="cocktail-header">
+        <h1><%= @cocktail.name %></h1>
+      </div>
+      <div class="cocktail-doses">
+        <% @cocktail.doses.each do |dose| %>
+          <%= dose.description %>
+          <%= dose.ingredient.name %>
+          <%= link_to "", dose_path(dose), :class => "far fa-trash-alt",
+          method: :delete,
+          data: { confirm: "Are you sure, dude?" } %>
+        <% end %>
+      </div>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+  <div><%= link_to "", cocktails_path, :class => "fas fa-arrow-circle-left" %></div>
+</div>
+
+
+
+
+
