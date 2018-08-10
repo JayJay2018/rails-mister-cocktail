@@ -3,15 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
+.container {
+  height: 100vh;
+}
 
 .card {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: black;
   position: relative;
+  text-decoration: none;
 }
 
+.index-header {
+  margin-bottom: 30px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body {
+  font-family: 'Do Hyeon', sans-serif;
+}
 
