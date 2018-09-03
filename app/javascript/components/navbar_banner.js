@@ -2,8 +2,8 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["All you need is a beer...", "Unless you can have two!"],
-    typeSpeed: 50,
+    strings: ["a cocktail!", "a good sip!", "love!"],
+    typeSpeed: 30,
     loop: true
   });
 }
