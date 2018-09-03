@@ -2,6 +2,11 @@
   <div class="banner-content">
     <h1>Sometimes all you need is a good sip</h1>
     <p>Search for your favourite cocktail</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
+    <div class="search-bar">
+      <%= form_tag cocktails_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a cocktail" %>
+      <% end %>
+    </div>
+    <a class="btn btn-primary button-start">Start now</a>
   </div>
 </div>
