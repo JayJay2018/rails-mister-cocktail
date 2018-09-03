@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
 
   def index
     if params[:query].present?
-      @cocktails = Cocktail.where(title: params[:query])
+      @cocktails = Cocktail.where(name: params[:query])
     else
       @cocktails = Cocktail.all
     end
