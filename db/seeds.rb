@@ -25,8 +25,7 @@ puts "Creating cocktails..."
 
 doc.search('h2').each do |title|
   new_cocktail = Cocktail.new({
-    name: title.text.strip,
-    photo: "url('https://source.unsplash.com/TnDaYFLMoSY/1600x900')",
+    name: title.text.strip
   })
   new_cocktail.save!
 end
