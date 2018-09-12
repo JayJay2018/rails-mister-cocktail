@@ -32,6 +32,17 @@
   justify-content: space-between;
 }
 
+/* Left section */
+.navbar-wagon-left{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form_input {
+  margin-left: 20px;
+  margin-top: 15px;
+}
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
