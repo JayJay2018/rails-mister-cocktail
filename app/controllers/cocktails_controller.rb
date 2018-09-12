@@ -16,6 +16,7 @@ skip_before_action :authenticate_user!, only: :index, raise: false
   end
 
   def create
+    authorize @cocktail
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
       redirect_to cocktails_path
