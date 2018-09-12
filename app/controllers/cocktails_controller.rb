@@ -16,6 +16,7 @@ skip_before_action :authenticate_user!, only: :index, raise: false
   end
 
   def create
+    authorize @cocktail
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
       redirect_to cocktails_path
@@ -27,6 +28,32 @@ skip_before_action :authenticate_user!, only: :index, raise: false
 
   def new
     @cocktail = Cocktail.new
+  end
+
+  def edit
+    @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
+  end
+
+  def update
+    @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
+    if @cocktail.update(cocktail_params)
+      redirect_to cocktails_path
+    else
+      render :new
+    end
+
+  end
+
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
+    if @cocktail.destroy
+      redirect_to cocktails_path, notice: "You removed #{@cocktail.name} which you created at #{@cocktail.created_at}."
+    else
+      render :show
+    end
   end
 
   private

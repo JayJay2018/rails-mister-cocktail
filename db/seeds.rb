@@ -7,6 +7,24 @@ Ingredient.destroy_all
 Cocktail.destroy_all
 User.destroy_all
 puts "Done."
+
+puts "Resetting id's..."
+ActiveRecord::Base.connection.tables.each do |t|
+  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end
+puts "Done!"
+
+puts "Creating user..."
+new_user = User.new({
+  email: 'negroni@cool.com',
+  password: '123456',
+  first_name: 'Wolfgang',
+  last_name: "Petry",
+})
+new_user.save!
+
+puts "Create #{User.count} User - named #{User.first.first_name}."
+
 # url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 # file = open(url).read
 # ingredients = JSON.parse(file)
@@ -26,7 +44,8 @@ puts "Creating cocktails..."
 
 doc.search('h2').each do |title|
   new_cocktail = Cocktail.new({
-    name: title.text.strip
+    name: title.text.strip,
+    user_id: 1,
   })
   new_cocktail.save!
 end

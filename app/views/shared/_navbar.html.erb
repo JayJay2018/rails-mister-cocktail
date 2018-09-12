@@ -1,8 +1,15 @@
 <div class="navbar-wagon">
   <!-- Logo -->
 
-
-    <%= image_tag "cocktail.png", height: 50 %>
+    <div class="navbar-wagon-left">
+      <%= image_tag "cocktail.png", height: 50 %>
+      <div class="form-group">
+        <%= form_tag cocktails_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control form_input", placeholder: "Find a cocktail" %>
+        <%#= submit_tag "Search", class: "" %>
+        <% end %>
+      </div>
+    </div>
 
 
 
@@ -10,8 +17,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <a href=<%= root_path %> class="navbar-wagon-item navbar-wagon-link">Cocktails</a>
-    <a href="https://www.lewagon.com/" class="navbar-wagon-item navbar-wagon-link">Le Wagon</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link"></a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Cocktail of the day</a>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
@@ -19,7 +25,6 @@
         <img src="https://avatars1.githubusercontent.com/u/40575245?v=4" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li> <%= link_to "Profile", edit_user_registration_path(current_user) %> </li>
-          <li> <%= link_to "Cocktail of the day", "#" %> </li>
           <% if current_user %>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
