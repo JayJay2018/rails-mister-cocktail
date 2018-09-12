@@ -18,12 +18,12 @@
       <div class="dropdown">
         <img src="https://avatars1.githubusercontent.com/u/40575245?v=4" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Sorry</a></li>
-          <li><a href="#">nothing</a></li>
+          <li> <%= link_to "Profile", edit_user_registration_path(current_user) %> </li>
+          <li> <%= link_to "Cocktail of the day", "#" %> </li>
           <% if current_user %>
-            <li><a href="#"><%= link_to "Logout", destroy_user_session_path, method: :delete %></a></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><a href="#"><%= link_to "Login", new_user_session_path %></a></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
         </ul>
       </div>
