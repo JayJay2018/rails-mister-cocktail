@@ -5,6 +5,7 @@ require "nokogiri"
 puts "Dropping database!"
 Ingredient.destroy_all
 Cocktail.destroy_all
+User.destroy_all
 puts "Done."
 # url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 # file = open(url).read
