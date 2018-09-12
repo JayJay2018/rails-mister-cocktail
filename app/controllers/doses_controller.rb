@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  skip_before_action :authenticate_user!, raise: false
+
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)

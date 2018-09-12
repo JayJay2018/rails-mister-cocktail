@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-
+skip_before_action :authenticate_user!, only: :index, raise: false
   def index
     if params[:query].present?
       @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:query]}%")
