@@ -11,7 +11,9 @@
     <div class="col-xs-12 col-md-4">
 
       <div class="card index" style="background-image: url('<%= cl_image_path cocktail.photo unless cocktail.photo.blank? %>')">
-        <h6 class="text-center"> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
+        <% if policy(cocktail).show? %>
+          <h6 class="text-center"> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
+        <% end %>
       </div>
 
     </div>

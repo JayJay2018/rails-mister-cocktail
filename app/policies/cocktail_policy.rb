@@ -1,7 +1,11 @@
 class CocktailPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
+      # anyone can view everything
       scope.all
+
+      # user can only see his cocktails
+      # scope.where(user: user)
     end
   end
 
@@ -18,10 +22,16 @@ class CocktailPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    user_is_owner_or_admin?
   end
 
   def destroy?
-    record.user == user
+    user_is_owner_or_admin?
+  end
+
+  private
+
+  def user_is_owner_or_admin?
+    record.user == user || user.admin
   end
 end
