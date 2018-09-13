@@ -3,10 +3,10 @@
     <div class="col-xs-6 col-xs-offset-3">
         <div class="cocktail-header">
           <h1><%= @cocktail.name %></h1>
-          <% if policy(Cocktail).update? %>
+          <% if policy(@cocktail).update? %>
             <%= link_to "Update", edit_cocktail_path(@cocktail) %>
           <% end %>
-          <% if policy(Cocktail).destroy? %>
+          <% if policy(@cocktail).destroy? %>
             <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
         </div>
