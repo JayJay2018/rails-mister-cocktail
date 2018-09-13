@@ -18,10 +18,10 @@ class CocktailPolicy < ApplicationPolicy
   end
 
   def update?
-    return true
+    record.user == user
   end
 
   def destroy?
-    return true
+    record.user == user
   end
 end
