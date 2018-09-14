@@ -25,6 +25,7 @@
 }
 
 .card {
+  // filter: grayscale(45%);
   height: 175px;
   // background-size: contain;
   background-size: cover;
@@ -43,6 +44,7 @@
 .card a {
   text-decoration: none;
   color: white;
+  font-size: 25px;
 }
 
 .card:hover {
