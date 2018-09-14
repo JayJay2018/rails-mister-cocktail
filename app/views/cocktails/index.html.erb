@@ -10,7 +10,7 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-md-4 no_padding">
       <% if cocktail.photo.blank? %>
-        <div class="card index" style="background-image: url('<%= image_path "cocktail1.jpeg" %>')">
+        <div class="card index" style="background-image: url('<%= cl_image_path "MrCocktail/cocktail5.jpg" %>')">
       <% else %>
         <div class="card index" style="background-image: url('<%= cl_image_path cocktail.photo %>')">
       <% end %>
