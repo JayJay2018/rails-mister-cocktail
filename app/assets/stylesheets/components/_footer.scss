@@ -2,9 +2,16 @@
   color: black;
 }
 
+.fab:hover {
+  color: white;
+}
 
 .footer {
-  background-color: white;
+  -webkit-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+  -moz-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+  box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+  margin-top: 20px;
+  color: white;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -13,3 +20,27 @@
 .footer-links > a {
   margin-right: 10px;
 }
+
+.footer-copyright:hover {
+  .fa-heart {
+    color: black;
+  };
+}
+
+#jay:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+
+    z-index:0;
+    font-family: 'Open Sans', sans-serif;
+    color:#fff;
+    padding:20px;
+    width:707px;
+
+
+    position:relative;
+    top:0px;
+    z-index:-1;
+  }
