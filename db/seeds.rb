@@ -2,6 +2,7 @@ require 'open-uri'
 require 'json'
 require "nokogiri"
 
+
 puts "Dropping database!"
 Ingredient.destroy_all
 Cocktail.destroy_all
@@ -15,15 +16,27 @@ end
 puts "Done!"
 
 puts "Creating user..."
-new_user = User.new({
+User.create!([{
   email: 'negroni@cool.com',
   password: '123456',
   first_name: 'Wolfgang',
   last_name: "Petry",
-})
-new_user.save!
+},
+{
+  email: 'thirsty@cool.com',
+  password: '123456',
+  first_name: 'Thirsty',
+  last_name: "Thursday",
+},
+{
+  email: 'dry@3.com',
+  password: '123456',
+  first_name: 'Dry',
+  last_name: "Martini",
+}
+]);
 
-puts "Create #{User.count} User - named #{User.first.first_name}."
+puts "Create #{User.count} User."
 
 # url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 # file = open(url).read
@@ -42,15 +55,17 @@ doc = Nokogiri::HTML(html_file)
 
 puts "Creating cocktails..."
 
-doc.search('h2').each do |title|
+doc.search('h2').take(9).each do |title|
   new_cocktail = Cocktail.new({
     name: title.text.strip,
-    user_id: 1,
+    user_id: rand(1..3),
   })
   new_cocktail.save!
 end
 
 puts "Create #{Cocktail.count} cocktails."
+# puts "Assigning images to #{Cocktail.count} cocktails."
+
 puts "Have a sip."
 
 # puts "Creating cocktail #{@recipes_urls.index(url)}...."

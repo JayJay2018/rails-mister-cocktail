@@ -1,0 +1,82 @@
+// Place all the styles related to the cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header-btn {
+  margin-bottom: 30px;
+}
+
+.container {
+  min-height: calc(100vh - 70px);
+}
+
+.index {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.no_padding {
+  padding: 0px !important;
+}
+
+.btn-back {
+  margin: 50px;
+}
+
+.card {
+  height: 175px;
+  // background-size: contain;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  position: relative;
+  text-decoration: none;
+  // background-repeat: no-repeat;
+  background-color: white;
+  transition: all 0.1s;
+  cursor:pointer;
+  border-right:1px solid #f0f0f0;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+.card:hover {
+
+  -ms-transform: scale(1.1,1.1); /* IE 9 */
+  -webkit-transform: scale(1.1,1.1); /* Safari */
+  transform: scale(1.1,1.1);
+  -webkit-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+  -moz-box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+  box-shadow: 10px 10px 91px 0px rgba(193,79,82,1);
+  z-index:9999;
+  border-right:1px solid transparent;
+  border-bottom:1px solid transparent;
+  cursor:pointer;
+  background-color:#fff;
+  border-radius: 3px;
+}
+
+.card a:hover {
+  // color: black;
+}
+
+.index-header {
+  margin-bottom: 30px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body {
+  background: rgba(244,103,110,1);
+  background: -webkit-linear-gradient(left, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+  background: linear-gradient(to right, rgba(244,103,110,1) 0%, rgba(245,141,97,1) 50%, rgba(244,103,110,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4676e', endColorstr='#f4676e', GradientType=1 );
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
