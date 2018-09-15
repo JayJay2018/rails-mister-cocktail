@@ -10,5 +10,4 @@
 console.log('Hello World from Webpacker')
 import 'bootstrap';
 
-import { loadDynamicBannerText } from '../components/navbar_banner';
-loadDynamicBannerText();
+
