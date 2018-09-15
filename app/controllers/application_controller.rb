@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :first_name, :last_name, :photo])
   end
 
+  def default_url_options
+    { host: ENV["HOST"] || "https://jays-awesome-cocktails.herokuapp.com/" }
+  end
+
    include Pundit
 
   # Pundit: white-list approach.
