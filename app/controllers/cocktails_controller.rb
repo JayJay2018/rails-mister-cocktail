@@ -61,7 +61,7 @@ before_action :set_cocktail, only: [ :show, :edit, :update, :destroy ]
   private
 
   def set_cocktail
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = policy_scope(Cocktail).find(params[:id])
     authorize @cocktail
   end
 

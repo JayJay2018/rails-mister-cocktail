@@ -38,16 +38,18 @@ User.create!([{
 
 puts "Create #{User.count} User."
 
-# url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-# file = open(url).read
-# ingredients = JSON.parse(file)
+puts "Creating ingredients..."
 
-# puts "Creating ingredients!"
+url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+file = open(url).read
+ingredients = JSON.parse(file)
 
-# ingredients["drinks"].each do |ingredient|
-#   Ingredient.create(name: ingredient["strIngredient1"])
-# end
-# puts "Finished! #{Ingredient.all.count} Ingredients have been created."
+puts "Creating ingredients!"
+
+ingredients["drinks"].each do |ingredient|
+  Ingredient.create(name: ingredient["strIngredient1"])
+end
+puts "Finished! #{Ingredient.all.count} Ingredients have been created."
 
 url = "https://www.cocktaildb.com/cocktail-recipes-collections/"
 html_file = open(url).read
