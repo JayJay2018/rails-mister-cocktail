@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
 skip_before_action :authenticate_user!, only: :index, raise: false
-before_action :set_cocktails, only: [ :show, :edit, :update, :destroy ]
+before_action :set_cocktail, only: [ :show, :edit, :update, :destroy ]
   def index
     if params[:query].present?
       @cocktails = policy_scope(Cocktail).where("name ILIKE ?", "%#{params[:query]}%")
@@ -22,7 +22,7 @@ before_action :set_cocktails, only: [ :show, :edit, :update, :destroy ]
     if @cocktail.save
       redirect_to cocktails_path, notice: "#{@cocktail.name} created. "
     else
-      render 'cocktails/show'
+      render :new
     end
 
   end
@@ -43,7 +43,7 @@ before_action :set_cocktails, only: [ :show, :edit, :update, :destroy ]
     if @cocktail.update(cocktail_params)
       redirect_to cocktails_path, notice: "You succesfully updated #{@cocktail.name} at #{Time.now}."
     else
-      render :new
+      render :edit
     end
 
   end
@@ -60,7 +60,7 @@ before_action :set_cocktails, only: [ :show, :edit, :update, :destroy ]
 
   private
 
-  def set_cocktails
+  def set_cocktail
     @cocktail = Cocktail.find(params[:id])
     authorize @cocktail
   end

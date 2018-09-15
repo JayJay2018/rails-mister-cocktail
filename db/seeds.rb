@@ -55,7 +55,7 @@ doc = Nokogiri::HTML(html_file)
 
 puts "Creating cocktails..."
 
-doc.search('h2').take(9).each do |title|
+doc.search('h2').take(6).each do |title|
   new_cocktail = Cocktail.new({
     name: title.text.strip,
     user_id: rand(1..3),

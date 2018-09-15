@@ -9,15 +9,21 @@
 <div class="row">
     <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-md-4 no_padding">
-      <% if cocktail.photo.blank? %>
-        <div class="card index" style="background-image: url('<%= cl_image_path "MrCocktail/cocktail5.jpg" %>')">
-      <% else %>
-        <div class="card index" style="background-image: url('<%= cl_image_path cocktail.photo %>')">
-      <% end %>
 
+      <% if cocktail.photo.blank? %>
+      <% cocktails = ["MrCocktail/cocktail1.jpg", "MrCocktail/cocktail2.jpg", "MrCocktail/cocktail3.jpg", "MrCocktail/cocktail4.jpg", "MrCocktail/cocktail5.jpg", "MrCocktail/cocktail6.jpg"] %>
+        <div class="card index" style="background-image: url('<%= cl_image_path cocktails.sample %>')">
           <% if policy(cocktail).show? %>
             <h6 class="text-center"> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
           <% end %>
+      <% else %>
+        <div class="card index" style="background-image: url('<%= cl_image_path cocktail.photo %>')">
+          <% if policy(cocktail).show? %>
+            <h6 class="text-center"> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h6>
+          <% end %>
+      <% end %>
+
+
         </div>
 
       </div>
