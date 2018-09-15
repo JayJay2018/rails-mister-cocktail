@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row header-btn">
-    <h1 class="index-header">Relax and have a cocktail, <%= current_user.first_name %>!</h1>
+    <% if current_user %>
+      <h1 class="index-header">Relax and have a cocktail, <%= current_user.first_name %>!</h1>
+    <% else %>
+      <h1 class="index-header">Relax and have a cocktail, but login first!</h1>
+    <% end %>
     <% if policy(Cocktail).create? %>
       <%= link_to "Add a cocktail", new_cocktail_path, :class => "btn btn-primary" %>
     <% end %>
